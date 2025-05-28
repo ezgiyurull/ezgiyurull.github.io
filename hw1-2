@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Hw1 - Soru 2</title>
+  <style>
+    body {
+      font-family: monospace;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    pre {
+      background: #eee;
+      padding: 15px;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hw1 - Soru 2</h1>
+  <pre><code>
+/* Addition program */
+#include &lt;stdio.h&gt;
+
+int main( void ) {
+    int integer1;
+    int integer2;
+    int sum;
+
+    printf("Enter first integer\n");
+    scanf("%d", &integer1);
+
+    printf("Enter second integer\n");
+    scanf("%d", &integer2);
+
+    sum = integer1 + integer2;
+
+    printf("Sum is %d\n", sum);
+    return 0;
+}
+  </code></pre>
+</body>
+</html>
