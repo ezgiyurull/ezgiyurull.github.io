@@ -2,43 +2,50 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>projelerim</title>
+  <title>Projelerim</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #b9f44c;
-      color: #333;
+      font-family: Arial, sans-serif;
+      background-color: #ccff4d;
     }
 
     header {
-      background-color: #f59ece;
-      color: black;
-      padding: 20px;
+      background-color: #ff99cc;
+      padding: 30px;
       text-align: center;
     }
 
-    section {
-      max-width: 900px;
+    h1 {
+      margin: 0;
+    }
+
+    .container {
       margin: 30px auto;
-      padding: 20px;
       background: white;
+      width: 400px;
+      padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
-    h1, h2 {
-      color: #2c3e50;
-    }
-
-    a {
-      color: #328600;
-      text-decoration: none;
+    ul {
+      list-style-type: none;
+      padding-left: 0;
     }
 
     li {
-      margin-bottom: 10px;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    .sublist {
+      margin-left: 20px;
+      display: none;
+    }
+
+    .sublist li {
+      color: green;
     }
   </style>
 </head>
@@ -49,14 +56,23 @@
     <p>Hazırladığım ödev ve projeler</p>
   </header>
 
-  <section>
+  <div class="container">
     <ul>
-      <li><a href="Hw1-soru2.html">Hw1 - Soru 2</a></li>
-      <li><a href="Hw1-soru3.html">Hw1 - Soru 3</a></li>
-      <li><a href="Hw1-soru4.html">Hw1 - Soru 4</a></li>
-      <!-- Daha fazla dosya ekleyebilirsin -->
+      <li onclick="toggleList()">Hw1</li>
+      <ul id="hw1-list" class="sublist">
+        <li>Hw1 - Soru 2</li>
+        <li>Hw1 - Soru 3</li>
+        <li>Hw1 - Soru 4</li>
+      </ul>
     </ul>
-  </section>
+  </div>
+
+  <script>
+    function toggleList() {
+      const list = document.getElementById('hw1-list');
+      list.style.display = list.style.display === 'none' || list.style.display === '' ? 'block' : 'none';
+    }
+  </script>
 
 </body>
 </html>
