@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Hw1 - Soru 4</title>
+  <style>
+    body {
+      font-family: monospace;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    pre {
+      background: #eee;
+      padding: 15px;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hw1 - Soru 4</h1>
+
+  <h3>1. Yöntem: Değer döndüren fonksiyon (int computeHomeValue)</h3>
+  <pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int computeHomeValue(int popularity , int size ){
+    return (pow(popularity,3) + pow(size,2)) * 10000;
+}
+
+int main(){
+    int popularity , size;
+    printf("Enter the popularity and size of the house. Popularity and size should be between 1 and 10.\\n");
+    do{
+        printf("popularity:");
+        scanf("%d", &amp;popularity);
+        printf("size:");
+        scanf("%d", &amp;size);
+        if(popularity &lt; 1 || popularity &gt; 10 || size &lt; 1 || size &gt; 10){
+            printf("Popularity and size should be scaled between 1 and 10.\\n");
+        }
+    }while(popularity &lt; 1 || popularity &gt; 10 || size &lt; 1 || size &gt; 10);
+
+    int value = computeHomeValue(popularity, size);
+    printf("House value is: %d", value);
+    return 0;
+}
+  </code></pre>
+
+  <h3>2. Yöntem: Her şeyi içinde yapan fonksiyon (void computeHomeValue)</h3>
+  <pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+void computeHomeValue(void){
+    int popularity, size;
+    int value;
+    printf("Enter the popularity and the size of the house. Popularity and size should be between 1 and 10.\\n");
+    do{
+        printf("popularity:");
+        scanf("%d", &amp;popularity);
+        printf("size:");
+        scanf("%d", &amp;size);
+        if(popularity &lt; 1 || popularity &gt; 10 || size &lt; 1 || size &gt; 10){
+            printf("The popularity and the size should be scaled between 1 and 10.\\n");
+        }
+    }while(popularity &lt; 1 || popularity &gt; 10 || size &lt; 1 || size &gt; 10);
+
+    value = (pow(popularity,3) + pow(size,2)) * 10000;
+    printf("Value of the house is: %d", value);
+}
+
+int main(){
+    computeHomeValue();
+    return 0;
+}
+  </code></pre>
+
+</body>
+</html>
