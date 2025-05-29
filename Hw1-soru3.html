@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Hw1 - Soru 3</title>
+  <style>
+    body {
+      font-family: monospace;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    pre {
+      background: #eee;
+      padding: 15px;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hw1 - Soru 3</h1>
+  <pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main() {
+    int popularity;
+    int size;
+    int value;
+
+    printf("Enter the popularity and size of the house. The popularity should be between 1 and 10\\n");
+
+    do {
+        printf("popularity:");
+        scanf("%d", &amp;popularity);
+        printf("size:");
+        scanf("%d", &amp;size);
+
+        if (popularity &lt; 1 || popularity &gt; 10 || size &lt; 1 || size &gt; 10) {
+            printf("Popularity and size should be scaled between 1 to 10\\n");
+        }
+    } while (popularity &lt; 1 || popularity &gt; 10 || size &lt; 1 || size &gt; 10);
+
+    value = (pow(popularity, 3) + pow(size, 2)) * 10000;
+    printf("House value is= %d", value);
+
+    return 0;
+}
+  </code></pre>
+</body>
+</html>
